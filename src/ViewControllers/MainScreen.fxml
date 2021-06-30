@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="878.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewControllers.MainScreen">
+    <children>
+        <DatePicker fx:id="datePicker" layoutX="677.0" layoutY="318.0" promptText="Choose Date" />
+        <ToggleButton fx:id="allTab" layoutX="20.0" layoutY="319.0" mnemonicParsing="false" onAction="#viewAllSelected" selected="true" text="View All">
+            <toggleGroup>
+                <ToggleGroup fx:id="calendarView" />
+            </toggleGroup></ToggleButton>
+        <ToggleButton fx:id="weeklyTab" layoutX="79.0" layoutY="319.0" mnemonicParsing="false" onAction="#weeklyTab" text="Weekly" toggleGroup="$calendarView" />
+        <ToggleButton fx:id="monthlyTab" layoutX="134.0" layoutY="319.0" mnemonicParsing="false" onAction="#monthlyTab" text="Monthly" toggleGroup="$calendarView" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4a8aa8" height="86.0" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" width="296.0" />
+        <Label layoutX="63.0" layoutY="22.0" prefHeight="43.0" prefWidth="171.0" text="Main Screen" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+            <font>
+                <Font name="System Bold" size="29.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="NONE" />
+            </cursor>
+            <effect>
+                <DropShadow />
+            </effect>
+        </Label>
+        <TableView fx:id="mainTableView" layoutX="20.0" layoutY="342.0" prefHeight="200.0" prefWidth="831.0">
+            <columns>
+                <TableColumn fx:id="apptIdCol" prefWidth="53.0" text="Appt ID" />
+                <TableColumn fx:id="nameCol" prefWidth="81.0" text="Name" />
+                <TableColumn fx:id="titleCol" prefWidth="77.0" text="Title" />
+                <TableColumn fx:id="descCol" prefWidth="77.0" text="Description" />
+                <TableColumn fx:id="locationCol" prefWidth="89.0" text="Location" />
+                <TableColumn fx:id="contactCol" prefWidth="52.0" text="Contact" />
+                <TableColumn fx:id="typeCol" prefWidth="58.0" text="Type" />
+                <TableColumn fx:id="startCol" prefWidth="57.0" text="Start" />
+                <TableColumn fx:id="endCol" prefWidth="69.0" text="End" />
+                <TableColumn fx:id="custidCol" prefWidth="53.0" text="Cust ID" />
+                <TableColumn fx:id="countryCol" prefWidth="72.0" text="Country" />
+            <TableColumn fx:id="dateColumn" prefWidth="92.0" text="Date" />
+            </columns>
+        </TableView>
+        <Button fx:id="addCustomerButton" layoutX="63.0" layoutY="138.0" mnemonicParsing="false" onAction="#addCustomerPushed" prefHeight="44.0" prefWidth="182.0" text="Add Customer">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="modifyCustomerButton" layoutX="63.0" layoutY="212.0" mnemonicParsing="false" onAction="#modifyCustomerPushed" text="Modify Customer">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="addAppointmentButton" layoutX="348.0" layoutY="138.0" mnemonicParsing="false" onAction="#addAppointmentPushed" prefHeight="44.0" prefWidth="213.0" text="Add Appointment">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="modifyAppointmentButton" layoutX="348.0" layoutY="212.0" mnemonicParsing="false" onAction="#modifyAppointmentsPushed" text="Modify Appointment">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="reportsButton" layoutX="648.0" layoutY="138.0" mnemonicParsing="false" onAction="#reportsPushed" prefHeight="44.0" prefWidth="182.0" text="Reports">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="exitButton" layoutX="648.0" layoutY="212.0" mnemonicParsing="false" onAction="#exitPushed" prefHeight="44.0" prefWidth="182.0" text="Exit">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+      <Label layoutX="23.0" layoutY="556.0" text="Current Date/Time:" />
+      <TextField fx:id="currentDateField" editable="false" layoutX="137.0" layoutY="552.0" prefHeight="25.0" prefWidth="206.0" />
+    </children>
+</AnchorPane>
